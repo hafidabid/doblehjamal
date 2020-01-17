@@ -71,6 +71,7 @@ void kalkulator(){
 }
 
 int main(){
+<<<<<<< HEAD
 	printf("Kalkulator Pintar namun sederhana\n");
 	printf("===================================\n");
 	printf("ketik 1 untuk kalkulator biasa\n");
@@ -88,4 +89,9 @@ int main(){
 		
 	//printf("%s",a);
 	
+=======
+	printf("hello world");
+	printf("hanungnahar");
+>>>>>>> fb3b3ec137c941461a6464a4e538371903102958
 }
+
