@@ -2,7 +2,10 @@
 #include <string.h>
 
 char a[999];
+char opr[999];
 int opsiawal;
+lanjut = 1;
+count = 0;
 
 void credit(){
 	printf("thanks for use this program\n");
@@ -38,7 +41,7 @@ void turunan(){
 			}
 		}
 	}
-	
+
 	for(x=0;x<n;x++){
 		arr[x] = arr[x]*(n-x-1);
 	}
@@ -67,7 +70,52 @@ void turunan(){
 }
 
 void kalkulator(){
-	printf("tugasmu nde kene le, lha garapen");
+    float angka[999];
+    char opr[999];
+    float hasil1[999];
+    float hasil2[999];
+    int x;
+    lanjut == 1;
+    count == 0;
+    printf("masukkan angka pertama anda: ");
+    scanf("%d", &angka[0]);
+    while (lanjut && count<999);{
+        printf("masukkan angka selanjutnya: ");
+        scanf("%d", &angka[count+1]);
+        printf("masukkan operasi yang diinginkan: \n");
+        printf("ketik + untuk penjumlahan\n");
+        printf("ketik - untuk pengurangan\n");
+        printf("ketik x untuk pengalian\n");
+        printf("ketik : untuk pembagian\n");
+        scanf("%c", opr[count]);
+        printf("ketik 1 untuk melanjutkan dan 0 untuk berhenti");
+        scanf("&d", &lanjut);
+        if (lanjut == 1);{
+            count++;
+        }
+
+    }
+    for(x=1;x<=count;x++);{
+        if (opr[x] == "x"){
+            angka[x+1] = angka[x]*angka[x++];
+            angka[x] = 0;
+            opr[x] = opr[x-1];
+        }
+        else if (opr[x] == ":"){
+            angka[x+1] = angka[x]/angka[x++];
+            angka[x] = 0;
+            opr[x] = opr[x-1];
+        }
+    }
+    for(x=0;x<=count;x++);{
+        if (opr[x] == "+"){
+            angka[x+1] = angka[x]+angka[x+1];
+        }
+        else if (opr[x] == "-"){
+            angka[x+1] == angka[x]-angka[x+1];
+        }
+    }
+
 }
 
 int main(){
@@ -79,16 +127,16 @@ int main(){
 	printf("ketik 3 untuk keluar dari program\n");
 	scanf("%d",&opsiawal);
 	if(opsiawal==1){
-		kalkulator();	
+		kalkulator();
 	}else if(opsiawal==2){
 		turunan();
 	}else{
 		credit();
 		return 0;
 	}
-		
+
 	//printf("%s",a);
-	
+
 =======
 	printf("hello world");
 	printf("hanungnahar");
