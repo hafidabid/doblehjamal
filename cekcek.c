@@ -72,8 +72,6 @@ void turunan(){
 void kalkulator(){
     float angka[999];
     char opr[999];
-    float hasil1[999];
-    float hasil2[999];
     int x;
     lanjut == 1;
     count == 0;
@@ -95,13 +93,26 @@ void kalkulator(){
         }
 
     }
-    for(x=1;x<=count;x++);{
+    for(x=0;x<=count;x++);{
         if (opr[x] == "x"){
-            angka[x+1] = angka[x]*angka[x++];
-            angka[x] = 0;
-            opr[x] = opr[x-1];
+            if (x == 0){
+                angka[x+1] = angka[x]*angka[x++];
+                angka[x] = 0;
+                opr[x] = "+";
+            }
+            else{
+                angka[x+1] = angka[x]*angka[x++];
+                angka[x] = 0;
+                opr[x] = opr[x-1];
+            }
+
         }
         else if (opr[x] == ":"){
+            if (x == 0){
+                angka[x+1] = angka[x]/angka[x+1];
+                angka[x] = 0;
+                opr[x] = "+";
+            }
             angka[x+1] = angka[x]/angka[x++];
             angka[x] = 0;
             opr[x] = opr[x-1];
@@ -138,8 +149,6 @@ int main(){
 	//printf("%s",a);
 
 =======
-	printf("hello world");
-	printf("hanungnahar");
 >>>>>>> fb3b3ec137c941461a6464a4e538371903102958
 }
 
