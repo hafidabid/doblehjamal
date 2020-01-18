@@ -4,15 +4,19 @@
 char a[999];
 char opr[999];
 int opsiawal;
-lanjut = 1;
-count = 0;
+    float angka[999];
+    char opr[999];
+    float jumlah=0;
+    int x;
+    int lanjut = 1;
+int count = 0;
 
 void credit(){
 	printf("thanks for use this program\n");
 		printf("created by = \n");
 		printf("1. hafid abi d 16519371\n");
-		printf("2. m ainun nahar \n");
-		printf("3. fakhri nail wibowo 16519\n");
+		printf("2. m ainun nahar 16719254 \n");
+		printf("3. fakhri nail wibowo 16519204\n");
 }
 void turunan(){
 	char hasil[999];
@@ -70,67 +74,79 @@ void turunan(){
 }
 
 void kalkulator(){
-    float angka[999];
-    char opr[999];
-    int x;
-    lanjut == 1;
-    count == 0;
+
+    //count = 0;
     printf("masukkan angka pertama anda: ");
-    scanf("%d", &angka[0]);
-    while (lanjut && count<999);{
+    scanf("%f", &angka[0]);
+    while (lanjut==1 && count<999){
         printf("masukkan angka selanjutnya: ");
-        scanf("%d", &angka[count+1]);
+        scanf("%f", &angka[count+1]);
         printf("masukkan operasi yang diinginkan: \n");
         printf("ketik + untuk penjumlahan\n");
         printf("ketik - untuk pengurangan\n");
         printf("ketik x untuk pengalian\n");
         printf("ketik : untuk pembagian\n");
-        scanf("%c", opr[count]);
+        scanf("%s", &opr[count]);
         printf("ketik 1 untuk melanjutkan dan 0 untuk berhenti");
-        scanf("&d", &lanjut);
-        if (lanjut == 1);{
+        scanf("%d", &lanjut);
+        if (lanjut == 1){
             count++;
         }
 
     }
-    for(x=0;x<=count;x++);{
-        if (opr[x] == "x"){
+    for(x=0;x<=count;x++){
+        if ((int)opr[x] == 120){
             if (x == 0){
-                angka[x+1] = angka[x]*angka[x++];
+                angka[x+1] = angka[x]*angka[x+1];
                 angka[x] = 0;
-                opr[x] = "+";
+                opr[x] = 43;
             }
             else{
-                angka[x+1] = angka[x]*angka[x++];
+                angka[x+1] = angka[x]*angka[x+1];
                 angka[x] = 0;
-                opr[x] = opr[x-1];
+                opr[x] = (int)opr[x-1];
             }
 
         }
-        else if (opr[x] == ":"){
+        else if (opr[x] == 58){
             if (x == 0){
                 angka[x+1] = angka[x]/angka[x+1];
                 angka[x] = 0;
-                opr[x] = "+";
+                opr[x] = 43;
             }
             angka[x+1] = angka[x]/angka[x++];
             angka[x] = 0;
             opr[x] = opr[x-1];
         }
     }
-    for(x=0;x<=count;x++);{
-        if (opr[x] == "+"){
-            angka[x+1] = angka[x]+angka[x+1];
+    for(x=0;x<=count;x++){
+        if(x==0){
+        	if ((int)opr[x] == 43){
+            jumlah = angka[x]+angka[x+1];
+            //printf("%f %f %f\n",jumlah,angka[x],angka[x+1]);
         }
-        else if (opr[x] == "-"){
-            angka[x+1] == angka[x]-angka[x+1];
+        	else if ((int)opr[x] == 45){
+            jumlah = angka[x]-angka[x+1];
+            //printf("%f %f %f\n",jumlah,angka[x],angka[x+1]);
         }
+		} else{
+			if ((int)opr[x] == 43){
+            	jumlah = jumlah+angka[x+1];
+            //printf("%f %f %f\n",jumlah,angka[x],angka[x+1]);
+        	}
+        	else if ((int)opr[x] == 45){
+            	jumlah = jumlah-angka[x+1];
+            //printf("%f %f %f\n",jumlah,angka[x],angka[x+1]);
+        }
+		}
     }
+    printf("jumlah = %f\n\n\n",jumlah);
+    credit();
 
 }
 
 int main(){
-<<<<<<< HEAD
+
 	printf("Kalkulator Pintar namun sederhana\n");
 	printf("===================================\n");
 	printf("ketik 1 untuk kalkulator biasa\n");
@@ -148,7 +164,6 @@ int main(){
 
 	//printf("%s",a);
 
-=======
->>>>>>> fb3b3ec137c941461a6464a4e538371903102958
+
 }
 
